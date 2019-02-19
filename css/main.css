@@ -15,17 +15,22 @@
 	font-family:'calibri';
 	src:url('../css/fonts/Calibri.ttf') format('truetype');
 }
+@font-face{
+	font-family:'lightFont';
+	src:url('../css/fonts/TheLightFont.ttf') format('truetype');
+}
 #openSide{
 	position:fixed;
 	top:1vw;
-	left:1.5vw;
+	left:1vw;
 	z-index:3;
+	
 }
 #openSide>div{
-	width: 35px;
-	height: 5px;
-	background-color: black;
-	margin: 6px 0;
+	width: 3vw;
+	height: 0.4vw;
+	background-color: white;
+	margin: 0.5vw 0;
 }
 #openSide:hover {
 	cursor:pointer;
@@ -149,7 +154,7 @@ margin:0;
 	height:70vw;
 	padding-left: 57.6vw;
 	display:flex;
-	border:1px solid pink;
+	/*border:1px solid pink;*/
 	color:#465A7F
 }
 #titleName{
@@ -166,23 +171,30 @@ text-orientation: upright;
 #titleDetails{
 	/*border:1px solid red;*/
 	padding-left:5vw;
+	font-family:'lightFont';
 }
 #titlePORTFOLIO{
 	color:#FFF;
-	font-size:9vw;
+	
+	font-size:8.55vw;
 	font-weight: bold;
-	font-family:'calibri';
+	
 	/*transform: scale(1, 1.25);*/
-	padding-top: 19.6875vw;
-	line-height: 80%;
+	padding-top: 19vw;
+	line-height: 100%;
+	text-align:right;
 }
 #hyphen{
 	color:#465A7F;
+	/*font-size:8.55vw;*/
 }
 #titleSkills{
 	font-size: 1.5vw;
 	text-align:right;
-	transform: scale(.75, 1);
+	transform: scale(1, 1);
+	padding-right:1.5vw;
+	font-weight: 500;
+	padding-top: 1.3vw;
 }
 #titleName,#titlePORTFOLIO,#titleSkills,#titlePORTFOLIO>span{
 	transition: font-size 0.5s,padding-top 0.5s;
@@ -195,9 +207,9 @@ text-orientation: upright;
 	display:block;
 	padding-left: 5.5vw;
 	padding-right: 5.5vw;
-	padding-top: 8vw;
+	padding-top: 5%;
 	border:1px solid;
-	padding-bottom:8vw;
+	padding-bottom:5%;
 }
 
 #aboutPage{
@@ -232,7 +244,7 @@ text-orientation: upright;
 #aboutCol-1-1,.sectionTitle{
 	font-size: 1.75vw;
 	text-align:center;
-	
+	font-family:lightFont;
 }
 .sectionTitle{
 	border-bottom-style: solid;
@@ -246,6 +258,7 @@ text-orientation: upright;
 .sub-title,.title-content{
 	 font-size: 1.75vw;
 	position:relative;
+	font-family: lightFont;
 }
 .title-content{
 	margin-bottom: 1.25vw;
@@ -264,25 +277,30 @@ text-orientation: upright;
 	left:0;
 	height: 1px;
 	width:6vw;
-	z-index:3;
+	z-index:99;
 	
 }
 .title{
 	margin-top:1vw;
 	font-size: 3.5vw;
 	color:#465A7F;
+	font-family: lightFont;
+	font-weight:900;
 }
 .description{
 	font-size: 1.25vw;
 /*	padding-right: 8vw;	*/
-	border:1px solid;
+/*	border:1px solid;*/
 	margin-top:1.5vw;
 	margin-bottom:2vw;
+	
 }
 #aboutCol-1-2{
-	font-size:3vw;
+	font-size:3.2vw;
 	text-align:center;
 	color:#465A7F;
+	font-family:lightFont;
+	margin-top:2vw;
 }
 #aboutCol-1-3{
 	width:100%;
@@ -457,6 +475,7 @@ text-orientation: upright;
 .videoLinkTitle{
 	margin-top:2vw;
 	font-size:2.25vw;
+	font-family: lightFont;
 	/*border:1px solid;*/
 }
 .videoLink{
@@ -480,7 +499,7 @@ text-orientation: upright;
 	margin-right:20%;
 }
 .content2{
-	border:1px solid;
+	/*border:1px solid;*/
 	width: 100%;
 	display:block;
 	position:relative;
@@ -502,7 +521,7 @@ text-orientation: upright;
 }
 
 .imageRow > span {
-	border:1px solid pink;
+	/*border:1px solid pink;*/
 	flex:1;
 	justify-content: center;
 }
@@ -526,7 +545,7 @@ text-orientation: upright;
 	flex:1;
 	width:100%;
 }
-#SAKAEIMG1>span>img,#SAKAEIMG2>span>img{
+#SAKAEIMG1>span>img,.SAKAEIMG2>span>img{
 	width:100%;
 	margin-right:auto;
 	margin-left:auto;
@@ -560,10 +579,6 @@ text-orientation: upright;
 }
 
 
-#infoPackage{
-	padding-top: 10vw;
-	
-}
 #info-package{
 	display:flex;
 	justify-content:center;
