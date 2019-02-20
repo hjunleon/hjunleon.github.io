@@ -702,6 +702,7 @@ width:100%;
 	right:0;
 	font-size:0.75vw;
 	flex:1;
+	border:2px solid red;
 }
 #tickets-1>div>div:nth-child(2),#tickets-2>div>div:nth-child(2){
 	width:100%;
