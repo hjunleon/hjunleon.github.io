@@ -696,19 +696,19 @@ width:100%;
 	display:flex;
 	
 }
-#tickets-1>div>div::nth-child(1),#tickets-2>div>div::nth-child(1){
+#tickets-1>div>div:nth-child(1),#tickets-2>div>div:nth-child(1){
 	position:absolute;
 	bottom:0;
 	right:0;
 	font-size:0.75vw;
 	flex:1;
 }
-#tickets-1>div>div::nth-child(2),#tickets-2>div>div::nth-child(2){
+#tickets-1>div>div:nth-child(2),#tickets-2>div>div:nth-child(2){
 	width:100%;
 	flex:4;
 }
 
-#tickets-1>div>div::nth-child(2)>img,#tickets-2>div>div::nth-child(2)>img{
+#tickets-1>div>div:nth-child(2)>img,#tickets-2>div>div:nth-child(2)>img{
 	width:100%;
 	margin-left:auto;
 	margin-right:auto;
