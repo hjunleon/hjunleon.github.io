@@ -697,6 +697,9 @@ width:100%;
 	
 }
 #tickets-1>div>div:nth-child(1),#tickets-2>div>div:nth-child(1){
+	flex:1;
+}
+#tickets-1>div>div:nth-child(1)>div,#tickets-2>div>div:nth-child(1)>div{
 	position:absolute;
 	bottom:0;
 	right:0;
