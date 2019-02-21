@@ -471,6 +471,9 @@ text-orientation: upright;
 	
 }
 
+.sub-content > span > iframe {
+	width:100%;
+}
 
 .videoLinkTitle{
 	margin-top:2vw;
