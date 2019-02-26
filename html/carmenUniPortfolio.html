@@ -481,7 +481,7 @@ conviniently anywhere and they can have a bonding session with a toast.</div>
 					CAMPAIGN KEY VISUAL
 				</div>
 				<span>
-					<img src="../yakun600.png">
+					<img class="blurImage" data-src="../yakun600.png" src="../blur/blurrypic-18.png">
 				</span>
 			</div>
 			<div class="sub-content">
@@ -515,7 +515,7 @@ fruits are still just as delicious and a video to educate others on how much ser
 					CAMPAIGN KEY VISUAL
 				</div>
 				<span>
-					<img src="../curvyHarvest.png">
+					<img class="blurImage" data-src="../curvyHarvest.png" src="../blur/blurrypic-19.png">
 				</span>
 			</div>
 			<div class="sub-content">
@@ -625,30 +625,30 @@ fruits are still just as delicious and a video to educate others on how much ser
 		<div class="content2">
 			<div class="imageRow">
 				<span>
-					<img src="../SM-10.jpg">
+					<img class="blurImage" data-src="../SM-10.jpg" src="../blur/blurrypic-20.png">
 				</span>
 				<span>
-					<img src="../SM-09.jpg">
+					<img class="blurImage" data-src="../SM-09.jpg" src="../blur/blurrypic-22.png">
 				</span>
 				<span>
-					<img src="../SM-08.jpg">
+					<img class="blurImage" data-src="../SM-08.jpg" src="../blur/blurrypic-24.png">
 				</span>
 				<span>
-					<img src="../SM-03.jpg">
+					<img class="blurImage" data-src="../SM-03.jpg" src="../blur/blurrypic-26.png">
 				</span>
 			</div>
 			<div class="imageRow">
 				<span>
-					<img src="../SM-07.jpg">
+					<img class="blurImage"  data-src="../SM-07.jpg" src="../blur/blurrypic-21.png">
 				</span>
 				<span>
-					<img src="../SM-06.jpg">
+					<img  class="blurImage" data-src="../SM-06.jpg" src="../blur/blurrypic-23.png">
 				</span>
 				<span>
-					<img src="../SM-05.jpg">
+					<img  class="blurImage" data-src="../SM-05.jpg" src="../blur/blurrypic-25.png">
 				</span>
 				<span>
-					<img src="../SM-04.jpg">
+					<img class="blurImage" data-src="../SM-04.jpg" src="../blur/blurrypic-27.png">
 				</span>
 			</div>
 		</div>
@@ -754,7 +754,7 @@ I chose to use simple food in singapore and give it a little humourous twist</di
 understanding of information
 				</div>
 				<div id="info-package-img1">
-					<img src="../PORTFOLIONEW-20.png">
+					<img class="blurImage" data-src="../PORTFOLIONEW-20.png" src="../Screen Shot 2019-02-09 at 10.51.28 PM.png">
 				</div>
 			</div>
 			<div>
@@ -1037,9 +1037,7 @@ function scrollToY(scrollTargetY, speed, easing) {
     // call it once to get started
     tick();
 };
-document.body.onload = function(){
-scrollToY(0, 1500, 'easeInOutQuint');
-}
+
 var sideLinks = document.querySelectorAll('#mySidenav div');
 var pages = document.querySelectorAll('.page');
 //alert(pages[0].scrollHeight);
@@ -1104,5 +1102,27 @@ sideLinks[7].onclick = function () {
 //	scrollToY(11170,1500,'easeInOutQuint');
 	totalScroll = totalScrollHeight(13);
 	scrollToY(totalScroll,1500,'easeInOutQuint'); }
+	
+	
+	
+	
+	
+	//lazy load
+	
+	
+	
+	
+	
+	
+	
+	
+	
+document.body.onload = function(){
+	scrollToY(0, 1500, 'easeInOutQuint');
+	var lazyLoadImages=document.getElementsByClassName("blurImage");
+	for (var x=0;x<lazyLoadImages.length;x++){ 
+		lazyLoadImages[x].setAttribute("src",lazyLoadImages[x].getAttribute("data-src"));
+	}
+}
 </script>
 </html>
