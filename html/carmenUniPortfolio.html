@@ -524,10 +524,11 @@ fruits are still just as delicious and a video to educate others on how much ser
 					CAMPAIGN VIDEO
 				</div>
 				<span>
-					<video controls>
-						<!--<source src="../assets/curvyHarvest.mp4" type="video/mp4">-->
+					<!--<video controls>
+						<!--<source src="../assets/curvyHarvest.mp4" type="video/mp4">
 						<source src="https://drive.google.com/uc?export=view&id=12k9BcjRTf-jrIpS5fOIEGDCDaTSrLaJk" type="video/mp4">
-					</video>
+					</video>-->
+					<iframe id="curvyHarvest" src="https://www.youtube.com/embed/mj0MGGzjAX4" frameborder="0" allowfullcreen></iframe>
 				</span>
 				<div class="videoLinkTitle">
 					VIDEO LINK
@@ -1192,7 +1193,9 @@ function loadFullImage(item){
 	
 	
 document.body.onload = function(){
-	scrollToY(0, 1500, 'easeInOutQuint');
+//	scrollToY(0, 1500, 'easeInOutQuint');
+
+	var notBlur;
 	console.log("lazyLoadImages "+lazyLoadImages)
 	//for (var x=0;x<lazyLoadImages.length;x++){ 
 	blurImage();
