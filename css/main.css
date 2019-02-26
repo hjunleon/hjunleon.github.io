@@ -794,7 +794,41 @@ footer>div:nth-child(2)>span>img{
 	border:1px solid red;
 }
 
+/*lazy load*/
 
+
+.sub-content,.imageRow{
+	position:relative;
+}
+/*.blurImage {
+	  position: absolute;
+  left: 0;
+  top: 3vw;
+}*/
+.blurImage > img.preview {
+  /*filter: blur(0.5vw);*/
+  transform: scale(1.00);
+
+
+}
+
+.blurImage > img.reveal {
+ /* position: absolute;
+  left: 0;
+  top: 0;
+   animation-delay:2s;
+  */
+  filter:blur(1vw);
+  will-change: transform, opacity, filter;
+  animation: reveal 1s ease-out;
+ 
+
+}
+
+@keyframes reveal {
+	0% { transform: scale(1.05); opacity: 1;filter:blur(1vw); }
+	100% { transform: scale(1); opacity: 1;filter:blur(0); }
+}
 
 .purple{
 	color:#A27ABC;
