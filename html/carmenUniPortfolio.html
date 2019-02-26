@@ -7,6 +7,7 @@
 <meta content="Carmen's Portfolio :)" name="title">
 <title>Carmen's Portfolio :)</title>  
 <link rel="stylesheet" href="../css/main.css">
+<link rel="shortcut icon"  href="https://web.whatsapp.com/img/e1acddef447f14687ce08acb956e2fff.webp"/>
 </head>  
 <body>
 	<div id="mySidenav" class="sidenav">
@@ -480,8 +481,8 @@ conviniently anywhere and they can have a bonding session with a toast.</div>
 				<div class="title-content">
 					CAMPAIGN KEY VISUAL
 				</div>
-				<span>
-					<img class="blurImage" data-src="../yakun600.png" src="../blur/blurrypic-18.png">
+				<span class="blurImage" data-src="../yakun600.png">
+					<img src="../blur/blurrypic-18.png" class="preview">
 				</span>
 			</div>
 			<div class="sub-content">
@@ -514,8 +515,8 @@ fruits are still just as delicious and a video to educate others on how much ser
 				<div class="title-content">
 					CAMPAIGN KEY VISUAL
 				</div>
-				<span>
-					<img class="blurImage" data-src="../curvyHarvest.png" src="../blur/blurrypic-19.png">
+				<span class="blurImage" data-src="../curvyHarvest.png">
+					<img src="../blur/blurrypic-19.png" class="preview">
 				</span>
 			</div>
 			<div class="sub-content">
@@ -624,31 +625,31 @@ fruits are still just as delicious and a video to educate others on how much ser
 		<div class="description">Take pictures of products and update them on facebook and instagram.</div>
 		<div class="content2">
 			<div class="imageRow">
-				<span>
-					<img class="blurImage" data-src="../SM-10.jpg" src="../blur/blurrypic-20.png">
+				<span class="blurImage" data-src="../SM-10.jpg">
+					<img src="../blur/blurrypic-20.png" class="preview">
 				</span>
-				<span>
-					<img class="blurImage" data-src="../SM-09.jpg" src="../blur/blurrypic-22.png">
+				<span class="blurImage" data-src="../SM-09.jpg">
+					<img data-src="../SM-09.jpg" src="../blur/blurrypic-22.png" class="preview">
 				</span>
-				<span>
-					<img class="blurImage" data-src="../SM-08.jpg" src="../blur/blurrypic-24.png">
+				<span class="blurImage" data-src="../SM-08.jpg">
+					<img data-src="../SM-08.jpg" src="../blur/blurrypic-24.png" class="preview">
 				</span>
-				<span>
-					<img class="blurImage" data-src="../SM-03.jpg" src="../blur/blurrypic-26.png">
+				<span class="blurImage" data-src="../SM-03.jpg">
+					<img data-src="../SM-03.jpg" src="../blur/blurrypic-26.png" class="preview">
 				</span>
 			</div>
 			<div class="imageRow">
-				<span>
-					<img class="blurImage"  data-src="../SM-07.jpg" src="../blur/blurrypic-21.png">
+				<span class="blurImage" data-src="../SM-07.jpg">
+					<img  data-src="../SM-07.jpg" src="../blur/blurrypic-21.png" class="preview">
 				</span>
-				<span>
-					<img  class="blurImage" data-src="../SM-06.jpg" src="../blur/blurrypic-23.png">
+				<span class="blurImage" data-src="../SM-06.jpg">
+					<img  data-src="../SM-06.jpg" src="../blur/blurrypic-23.png" class="preview">
 				</span>
-				<span>
-					<img  class="blurImage" data-src="../SM-05.jpg" src="../blur/blurrypic-25.png">
+				<span class="blurImage" data-src="../SM-05.jpg">
+					<img data-src="../SM-05.jpg" src="../blur/blurrypic-25.png" class="preview">
 				</span>
-				<span>
-					<img class="blurImage" data-src="../SM-04.jpg" src="../blur/blurrypic-27.png">
+				<span class="blurImage" data-src="../SM-04.jpg">
+					<img data-src="../SM-04.jpg" src="../blur/blurrypic-27.png" class="preview">
 				</span>
 			</div>
 		</div>
@@ -753,8 +754,8 @@ I chose to use simple food in singapore and give it a little humourous twist</di
 				<div class="description">Design an infographic on Nano Glo n Glo for easier
 understanding of information
 				</div>
-				<div id="info-package-img1">
-					<img class="blurImage" data-src="../PORTFOLIONEW-20.png" src="../Screen Shot 2019-02-09 at 10.51.28 PM.png">
+				<div id="info-package-img1" class="blurImage" data-src="../PORTFOLIONEW-20.png">
+					<img class="preview" data-src="../PORTFOLIONEW-20.png" src="../Screen Shot 2019-02-09 at 10.51.28 PM.png">
 				</div>
 			</div>
 			<div>
@@ -1108,9 +1109,82 @@ sideLinks[7].onclick = function () {
 	
 	
 	//lazy load
+var lazyLoadImages=document.getElementsByClassName("blurImage"),timer;
+function blurImage(){
+	 var wT = window.pageYOffset, wB = wT + window.innerHeight, cRect, pT, pB, p = 0;
 	
+		pItem = ""||lazyLoadImages;
+
 	
-	
+//	console.log("x "+x);
+	console.log("p "+p);
+	console.log("pItemLen "+pItem.length);
+  while (p < pItem.length) {
+//
+    cRect = pItem[p].getBoundingClientRect();
+    pT = wT + cRect.top;
+    pB = pT + cRect.height;
+	console.log(pItem[p]);
+//
+    if (wT < pB && wB > pT) {
+      loadFullImage(pItem[p]);
+	p++;
+   //   pItem[p].classList.remove('replace');
+    }
+    else p++;
+  }
+}
+function loadFullImage(item){
+//	 if (!item || !item.href) return;
+
+  // load image
+  var img = new Image();
+ // if (item.dataset) {
+  //  img.srcset = item.dataset.srcset || '';
+   // img.sizes = item.dataset.sizes || '';
+ // }
+  img.src = item.getAttribute("data-src");
+  img.className = "reveal";
+  console.log(img);
+  if (img.complete) {
+	addImg();
+	console.log("frstFired");
+	}
+  else {
+  img.onload = addImg;
+  console.log("secondFired");
+  }
+   function addImg() {
+    // disable click
+    item.addEventListener('click', function(e) { e.preventDefault(); }, false);
+	console.log(img);
+	var pImg = item.querySelector('img.preview');
+	item.removeChild(pImg);
+	//item.appendChild(img);//.onload = function(){
+	//	var pImg = item.querySelector('img.preview');
+	//	console.log("pimg" + pImg);
+	//	item.removeChild(pImg);
+	//}
+	//var pImg = item.querySelector('img.preview');
+	//console.log("pimg" + pImg);
+	//item.removeChild(pImg);
+	//	console.log(item);
+//	console.log(img);
+    // add full image
+    item.appendChild(img).addEventListener('animationend', function(e) {
+     //  remove preview image
+   //   var pImg = item.querySelector('img.preview');
+   console.log("pimg" + pImg);
+      if (pImg) {
+        e.target.alt = pImg.alt || '';
+      //  item.removeChild(pImg);
+        e.target.classList.remove('reveal');
+      }
+   });
+  }
+}
+
+
 	
 	
 	
@@ -1119,10 +1193,24 @@ sideLinks[7].onclick = function () {
 	
 document.body.onload = function(){
 //	scrollToY(0, 1500, 'easeInOutQuint');
-	var lazyLoadImages=document.getElementsByClassName("blurImage");
-	for (var x=0;x<lazyLoadImages.length;x++){ 
-		lazyLoadImages[x].setAttribute("src",lazyLoadImages[x].getAttribute("data-src"));
-	}
+
+	var notBlur;
+	console.log("lazyLoadImages "+lazyLoadImages)
+	//for (var x=0;x<lazyLoadImages.length;x++){ 
+	blurImage();
+	//	lazyLoadImages[x].setAttribute("src",lazyLoadImages[x].getAttribute("data-src"));
+//	}
+	function scroller(e) {
+  timer = timer || setTimeout(function() {
+   timer = null;
+//	for (var x=0;x<lazyLoadImages.length;x++){
+		requestAnimationFrame(blurImage);
+//	}
+  }, 300);
+};
+	window.addEventListener('scroll', scroller, false);
+	window.addEventListener('resize', scroller, false);
+
 }
 </script>
 </html>
