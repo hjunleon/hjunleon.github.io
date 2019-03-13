@@ -219,6 +219,9 @@ text-orientation: upright;
 	position:relative;
 
 }
+#aboutPage>div{
+	padding-top: 5%;
+}
 .aboutCol{
 /*	border: 1px solid blue;*/
 	height:100%;
