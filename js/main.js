@@ -111,75 +111,9 @@ function scrollToY(scrollTargetY, speed, easing) {
 
     // call it once to get started
     tick();
-};
-
-var sideLinks = document.querySelectorAll('#mySidenav div');
-var pages = document.querySelectorAll('.page');
-//alert(pages[0].scrollHeight);
-	function totalScrollHeight(x){
-		var totalHeight=document.getElementById("titlePage").scrollHeight;
-		for (var i = 0; i< x; i++){
-			totalHeight +=pages[i].scrollHeight;
-			//alert(totalHeight);
-		}
-		return totalHeight;
-	}
-var totalScroll;
-var initialScroll = new Array();
-	initialScroll[0] = document.getElementById("titlePage").scrollHeight;
-	initialScroll[1] = totalScrollHeight(1);
-	initialScroll[2] = totalScrollHeight(3);
-	initialScroll[3] = totalScrollHeight(7);
-	initialScroll[4] = totalScrollHeight(9);
-	initialScroll[5] = totalScrollHeight(10);
-	initialScroll[6] = totalScrollHeight(12);
-	initialScroll[7] = totalScrollHeight(13);
-sideLinks[0].onclick = function () {
-   //document.getElementById("aboutPage").scrollIntoView({ behavior: 'smooth' });  
-	scrollToY(document.getElementById("titlePage").scrollHeight,1500,'easeInOutQuint');
-//	pages[0].scrollIntoView({ behavior: 'smooth' });
-   }
-sideLinks[1].onclick = function () {
-	totalScroll = totalScrollHeight(1);
-	scrollToY(totalScroll,1500,'easeInOutQuint');
-  // pages[1].scrollIntoView({ behavior: 'smooth' });  
 }
-sideLinks[2].onclick = function () {
- //  document.getElementById("socialMarket").scrollIntoView({ behavior: 'smooth' });  
-	totalScroll = totalScrollHeight(3);
-	scrollToY(totalScroll,1500,'easeInOutQuint');
-}		
-sideLinks[3].onclick = function () {
-//   document.getElementById("graphic").scrollIntoView({ behavior: 'smooth' });  
-	totalScroll = totalScrollHeight(7);
-	scrollToY(totalScroll,1500,'easeInOutQuint');
-}
-sideLinks[4].onclick = function () {
- //  document.getElementById("infoPackage").scrollIntoView({ behavior: 'smooth' });  
-//	scrollToY(7850,1500,'easeInOutQuint');
-		totalScroll = totalScrollHeight(9);
-	scrollToY(totalScroll,1500,'easeInOutQuint');
 
- }
-sideLinks[5].onclick = function () {
-//   document.getElementById("publication").scrollIntoView({ behavior: 'smooth' });  
-	totalScroll = totalScrollHeight(10);
-	scrollToY(totalScroll,1500,'easeInOutQuint');
-  }
-sideLinks[6].onclick = function () {
-//   document.getElementById("wayFind").scrollIntoView({ behavior: 'smooth' });  
-//	scrollToY(10350,1500,'easeInOutQuint');
-	totalScroll = totalScrollHeight(12);
-	scrollToY(totalScroll,1500,'easeInOutQuint');
-  }
-sideLinks[7].onclick = function () {
-  document.getElementById("web-design").scrollIntoView({ behavior: 'smooth' });  
-//	scrollToY(11170,1500,'easeInOutQuint');
-	totalScroll = totalScrollHeight(13);
-	scrollToY(totalScroll,1500,'easeInOutQuint'); }
-	
-	
-	
+
 	
 	
 	//lazy load
@@ -266,8 +200,12 @@ function loadFullImage(item){
 	
 	
 document.body.onload = function(){
-	scrollToY(0, 1500, 'easeInOutQuint');
-	console.log("lazyLoadImages "+lazyLoadImages)
+	let promise1 = new Promise(function(res,rej){
+		scrollToY(0, 1500, 'easeInOutQuint');
+		 setTimeout(()=>{res("Success!");},2000);
+	})
+	//scrollToY(0, 1500, 'easeInOutQuint')
+	console.log("lazyLoadImages "+lazyLoadImages);
 	//for (var x=0;x<lazyLoadImages.length;x++){ 
 	blurImage();
 	//	lazyLoadImages[x].setAttribute("src",lazyLoadImages[x].getAttribute("data-src"));
@@ -279,8 +217,95 @@ document.body.onload = function(){
 		requestAnimationFrame(blurImage);
 //	}
   }, 300);
-};
+}
 	window.addEventListener('scroll', scroller, false);
 	window.addEventListener('resize', scroller, false);
+promise1.then(function(successMessage){
 
+//console.log(successMessage);
+var sideLinks = document.querySelectorAll('#mySidenav div');
+var pages = document.querySelectorAll('.page');
+	console.log(pages);
+//alert(pages[0].scrollHeight);
+	function totalScrollHeight(x){
+		var totalHeight=document.getElementById("titlePage").scrollHeight;
+		for (var i = 0; i< x; i++){
+			totalHeight +=pages[i].scrollHeight;
+			//alert(totalHeight);
+		}
+		return totalHeight;
+	}
+var totalScroll;
+var initialScroll = new Array();
+	/*initialScroll[0] = document.getElementById("titlePage").scrollHeight;
+	initialScroll[1] = totalScrollHeight(1);
+	initialScroll[2] = totalScrollHeight(3);
+	initialScroll[3] = totalScrollHeight(7);
+	initialScroll[4] = totalScrollHeight(9);
+	initialScroll[5] = totalScrollHeight(10);
+	initialScroll[6] = totalScrollHeight(12);
+	initialScroll[7] = totalScrollHeight(13);*/
+initialScroll[0] = document.getElementById("titlePage").getBoundingClientRect().top;
+initialScroll[1] = pages[1].getBoundingClientRect().top;
+initialScroll[2] = pages[3].getBoundingClientRect().top;
+initialScroll[3] = pages[7].getBoundingClientRect().top;
+initialScroll[4] = pages[9].getBoundingClientRect().top;
+initialScroll[5] = pages[10].getBoundingClientRect().top;
+initialScroll[6] = pages[12].getBoundingClientRect().top;
+initialScroll[7] = pages[13].getBoundingClientRect().top;
+initialScroll[8] = pages[14].getBoundingClientRect().top;
+//alert("div: "+pages[13].querySelector('div').getBoundingClientRect().top+"      initial: "+totalScrollHeight(13));
+sideLinks[0].onclick = function () {
+   //document.getElementById("aboutPage").scrollIntoView({ behavior: 'smooth' });  
+	scrollToY(document.getElementById("titlePage").scrollHeight,1500,'easeInOutQuint');
+//	pages[0].scrollIntoView({ behavior: 'smooth' });
+   }
+sideLinks[1].onclick = function () {
+	totalScroll = totalScrollHeight(1);
+	scrollToY(initialScroll[1],1500,'easeInOutQuint');
+  // pages[1].scrollIntoView({ behavior: 'smooth' });  
+}
+sideLinks[2].onclick = function () {
+ //  document.getElementById("socialMarket").scrollIntoView({ behavior: 'smooth' });  
+	totalScroll = totalScrollHeight(3);
+	scrollToY(initialScroll[2],1500,'easeInOutQuint');
+}
+sideLinks[3].onclick = function () {
+//   document.getElementById("graphic").scrollIntoView({ behavior: 'smooth' });  
+	totalScroll = totalScrollHeight(7);
+	scrollToY(initialScroll[3],1500,'easeInOutQuint');
+}
+sideLinks[4].onclick = function () {
+ //  document.getElementById("infoPackage").scrollIntoView({ behavior: 'smooth' });  
+//	scrollToY(7850,1500,'easeInOutQuint');
+		totalScroll = totalScrollHeight(9);
+	scrollToY(initialScroll[4],1500,'easeInOutQuint');
+
+ }
+sideLinks[5].onclick = function () {
+//   document.getElementById("publication").scrollIntoView({ behavior: 'smooth' });  
+	totalScroll = totalScrollHeight(10);
+	scrollToY(initialScroll[5],1500,'easeInOutQuint');
+  }
+sideLinks[6].onclick = function () {
+//   document.getElementById("wayFind").scrollIntoView({ behavior: 'smooth' });  
+//	scrollToY(10350,1500,'easeInOutQuint');
+	totalScroll = totalScrollHeight(12);
+	scrollToY(initialScroll[6],1500,'easeInOutQuint');
+  }
+sideLinks[7].onclick = function () {
+  document.getElementById("web-design").scrollIntoView({ behavior: 'smooth' });  
+//	scrollToY(11170,1500,'easeInOutQuint');
+	totalScroll = totalScrollHeight(13);
+	scrollToY(initialScroll[7],1500,'easeInOutQuint');
+}
+sideLinks[8].onclick = function () {
+//  document.getElementById("web-design").scrollIntoView({ behavior: 'smooth' });  
+//	scrollToY(11170,1500,'easeInOutQuint');
+	//totalScroll = totalScrollHeight(14);
+	scrollToY(initialScroll[8],1500,'easeInOutQuint');
+}
+	
+});
+	
 }
