@@ -1,5 +1,6 @@
 	function openNav() {
   document.getElementById("mySidenav").style.width = "15%";
+	document.getElementById("openSide").style.opacity="0";
  // document.getElementById("main").style.marginLeft = "15%";
 //document.getElementById("titlePage").style.paddingLeft="50vw";
 //document.getElementById("titlePORTFOLIO").style.paddingTop = "16.734vw";
@@ -13,6 +14,7 @@
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("openSide").style.opacity="1";
 //  document.getElementById("main").style.marginLeft = "0";
 //  document.getElementById("titlePage").style.paddingLeft="60vw";
 //  document.getElementById("titlePORTFOLIO").style.paddingTop = "19.6875vw";
