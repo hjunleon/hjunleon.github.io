@@ -1,11 +1,11 @@
 	function openNav() {
   document.getElementById("mySidenav").style.width = "15%";
-  document.getElementById("main").style.marginLeft = "15%";
-document.getElementById("titlePage").style.paddingLeft="50vw";
-document.getElementById("titlePORTFOLIO").style.paddingTop = "16.734vw";
-document.getElementById("titlePORTFOLIO").style.fontSize = "6vw";
-document.getElementById("titleSkills").style.fontSize = "1vw";
-document.getElementById("titleName").style.fontSize = "2vw";
+ // document.getElementById("main").style.marginLeft = "15%";
+//document.getElementById("titlePage").style.paddingLeft="50vw";
+//document.getElementById("titlePORTFOLIO").style.paddingTop = "16.734vw";
+//document.getElementById("titlePORTFOLIO").style.fontSize = "6vw";
+//document.getElementById("titleSkills").style.fontSize = "1vw";
+//document.getElementById("titleName").style.fontSize = "2vw";
 // change font size 15%, possibly padding top percentage
 		
 }
@@ -13,12 +13,12 @@ document.getElementById("titleName").style.fontSize = "2vw";
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-  document.getElementById("titlePage").style.paddingLeft="60vw";
-  document.getElementById("titlePORTFOLIO").style.paddingTop = "19.6875vw";
-document.getElementById("titlePORTFOLIO").style.fontSize = "9vw";
-document.getElementById("titleSkills").style.fontSize = "1.5vw";
-document.getElementById("titleName").style.fontSize = "2.6vw";
+//  document.getElementById("main").style.marginLeft = "0";
+//  document.getElementById("titlePage").style.paddingLeft="60vw";
+//  document.getElementById("titlePORTFOLIO").style.paddingTop = "19.6875vw";
+//document.getElementById("titlePORTFOLIO").style.fontSize = "9vw";
+//document.getElementById("titleSkills").style.fontSize = "1.5vw";
+//document.getElementById("titleName").style.fontSize = "2.6vw";
 }				
 
 window.onscroll = function() {scrollFunction()};
