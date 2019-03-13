@@ -294,7 +294,7 @@ sideLinks[6].onclick = function () {
 	scrollToY(initialScroll[6],1500,'easeInOutQuint');
   }
 sideLinks[7].onclick = function () {
-  document.getElementById("web-design").scrollIntoView({ behavior: 'smooth' });  
+ // document.getElementById("web-design").scrollIntoView({ behavior: 'smooth' });  
 //	scrollToY(11170,1500,'easeInOutQuint');
 	totalScroll = totalScrollHeight(13);
 	scrollToY(initialScroll[7],1500,'easeInOutQuint');
