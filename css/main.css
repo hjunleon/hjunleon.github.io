@@ -71,7 +71,7 @@ overflow: hidden;
   z-index: 4; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #465A7F; /* Black*/
+  background-color: rgba(0, 85, 127,0.9); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 5vw; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -82,10 +82,9 @@ overflow: hidden;
   padding: 0.5vw 0.5vw 0.5vw 2vw;
   text-decoration: none;
   font-size: 1.5vw;
-  color: #f1f1f1;
+  color: rgba(241,241,241,0.9);
   display: block;
   transition: 0.3s;
-  background-color: #465A7F;
   cursor:pointer;
 }
 
@@ -207,11 +206,13 @@ text-orientation: upright;
 	display:block;
 	padding-left: 5.5vw;
 	padding-right: 5.5vw;
-	padding-top: 5%;
-	border:1px solid;
+	
+	/*border:1px solid;*/
 	padding-bottom:5%;
 }
-
+.page>div:nth-child(1){
+	padding-top: 5%;
+}
 #aboutPage{
 	display:flex;
 	justify-content:center;
