@@ -795,11 +795,17 @@ footer{
 footer>div:nth-child(2){
 	font-size:2vw;
 	margin-top:2vw;
-}
-footer>div:nth-child(2)>span>img{
 	height:1.5vw;
-	
-	border:1px solid red;
+}
+footer>div:nth-child(2)>span{
+	height:1.5vw;
+}
+
+#instaIcon > svg{
+	height:100%;
+}
+#mailIcon > svg{
+	height:100%;
 }
 
 /*lazy load*/
@@ -856,3 +862,4 @@ footer>div:nth-child(2)>span>img{
 .cyan{
 	color:#49E2F2;
 }
+
