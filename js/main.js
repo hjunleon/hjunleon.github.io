@@ -141,7 +141,7 @@ function blurImage(){
 	console.log("wB: " + wB);
 	console.log(pItem[p]);
 //
-    if (/*wT < pB && */wB > pT + 100) {
+    if (/*wT < pB && */wB > pT + 50) {
       loadFullImage(lazyLoadContainers[p]);
 	p++;
    //   pItem[p].classList.remove('replace');
