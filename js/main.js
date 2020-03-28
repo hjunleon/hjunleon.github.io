@@ -117,25 +117,32 @@ function scrollToY(scrollTargetY, speed, easing) {
 	
 	
 	//lazy load
-var lazyLoadImages=document.getElementsByClassName("blurImage"),timer;
+var timer;
 function blurImage(){
 	 var wT = window.pageYOffset, wB = wT + window.innerHeight, cRect, pT, pB, p = 0;
-	
-		pItem = ""||lazyLoadImages;
+	var lazyLoadImages=document.getElementsByClassName("preview");
+	var lazyLoadContainers = document.getElementsByClassName("blurImage");
+	pItem = ""||lazyLoadImages;
 
 	
 //	console.log("x "+x);
-	console.log("p "+p);
 	console.log("pItemLen "+pItem.length);
   while (p < pItem.length) {
 //
+	console.log("p "+p);
     cRect = pItem[p].getBoundingClientRect();
+	console.log("cRect top: " + cRect.top);
+	console.log("cRect bottom: " + cRect.bottom);
     pT = wT + cRect.top;
     pB = pT + cRect.height;
+	console.log("pT: " + pT);
+	console.log("pB: " + pB);
+	console.log("wT: " + wT);
+	console.log("wB: " + wB);
 	console.log(pItem[p]);
 //
-    if (wT < pB && wB > pT) {
-      loadFullImage(pItem[p]);
+    if (/*wT < pB && */wB > pT + 100) {
+      loadFullImage(lazyLoadContainers[p]);
 	p++;
    //   pItem[p].classList.remove('replace');
     }
@@ -182,13 +189,14 @@ function loadFullImage(item){
     item.appendChild(img).addEventListener('animationend', function(e) {
      //  remove preview image
    //   var pImg = item.querySelector('img.preview');
-   console.log("pimg" + pImg);
-      if (pImg) {
-        e.target.alt = pImg.alt || '';
+		console.log(pImg);
+		if (pImg) {
+			e.target.alt = pImg.alt || '';
       //  item.removeChild(pImg);
-        e.target.classList.remove('reveal');
-      }
-   });
+			e.target.classList.remove('reveal');
+		}
+		item.className="";
+	});
   }
 }
 
@@ -205,7 +213,7 @@ document.body.onload = function(){
 		 setTimeout(()=>{res("Success!");},2000);
 	})
 	//scrollToY(0, 1500, 'easeInOutQuint')
-	console.log("lazyLoadImages "+lazyLoadImages);
+	//console.log("lazyLoadImages "+lazyLoadImages);
 	//for (var x=0;x<lazyLoadImages.length;x++){ 
 	blurImage();
 	//	lazyLoadImages[x].setAttribute("src",lazyLoadImages[x].getAttribute("data-src"));
